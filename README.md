@@ -1,6 +1,6 @@
 ## Chat Application
 
-- _Link:_ [[https://#.herokuapp.com/]]
+- _Link:_ [[https://dg-chat-app.herokuapp.com/]]
 - _Description:_ This is a chat application built with React and Node.
 - _Author:_
   - **Chi Joshua** [[https://www.linkedin.com/in/joshua-onyenwere/]]
