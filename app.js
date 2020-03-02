@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
-const fs = require('fs');
 const path = require('path');
 
 const userRouter = require('./routes/userRouter');
@@ -20,7 +19,7 @@ app.use('/api/chat', chatRouter);
 // Writing image from client to uploads
 let storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, './uploads');
+    cb(null, 'uploads/');
   },
   filename: function(req, file, cb) {
     cb(null, `${Date.now()}_${file.originalname}`);
@@ -34,13 +33,16 @@ app.post('/api/chat/uploadfiles', auth, (req, res) => {
     if (err) {
       return res.json({ success: false, err });
     }
-    return res.json({ success: true, url: res.req.file.path });
+    return res.json({
+      success: true,
+      url: `${res.req.file.destination}${res.req.file.filename}`
+    });
   });
 });
 
 // Displays image in node js server to client (react js)
 
-app.use('/server/uploads', express.static('/server/uploads'));
+app.use('/uploads', express.static('uploads'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
