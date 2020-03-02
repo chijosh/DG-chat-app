@@ -51,7 +51,7 @@ io.on('connection', socket => {
   });
 });
 
-const port = config.authPort || 5000;
+const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
   console.log(`Server Running at ${port}`);
