@@ -42,7 +42,7 @@ app.post('/api/chat/uploadfiles', auth, (req, res) => {
 
 // Displays image in node js server to client (react js)
 
-app.use('/uploads', express.static('/uploads'));
+app.use('/uploads', express.static('uploads'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
