@@ -1,13 +1,13 @@
-import React from "react";
-import { FaStackExchange } from "react-icons/fa";
+import React from 'react';
+import { FaStackExchange } from 'react-icons/fa';
 
 function LandingPage() {
   return (
     <>
       <div className="app">
-        <FaStackExchange style={{ fontSize: "4rem" }} />
+        <FaStackExchange style={{ fontSize: '4rem' }} />
         <br />
-        <span style={{ fontSize: "2rem" }}>Start Chating!</span>
+        <span style={{ fontSize: '2rem' }}>Start Chatting!</span>
       </div>
     </>
   );
