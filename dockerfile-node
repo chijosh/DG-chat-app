@@ -1,0 +1,12 @@
+# Base image
+FROM node:12.16.1
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY ./server .
+
+RUN npm install --silent
+
+CMD [ "npm","run","backend" ]

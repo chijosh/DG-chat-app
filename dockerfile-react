@@ -1,0 +1,12 @@
+# Base image
+FROM node:13
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY ./client .
+
+RUN npm install --silent
+
+CMD [ "npm","run", "start" ]
