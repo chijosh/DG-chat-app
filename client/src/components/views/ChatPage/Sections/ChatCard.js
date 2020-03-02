@@ -9,7 +9,7 @@ function ChatCard(props) {
         author={props.sender.name}
         avatar={<Avatar src={props.sender.image} alt={props.sender.name} />}
         content={
-          props.message.substring(0, 8) === '/server/uploads' ? (
+          props.message.substring(0, 8) === 'uploads/' ? (
             // this will be either video or image
 
             props.message.substring(
