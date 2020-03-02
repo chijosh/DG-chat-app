@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const fs = require('fs');
+const path = require('path');
 
 const userRouter = require('./routes/userRouter');
 const chatRouter = require('./routes/chatRouter');
